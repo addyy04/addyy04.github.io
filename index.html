@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adeeba Khan</title>
+<meta name="description" content="Adeeba Khan, PhD student in Biomedical Engineering at IIT Hyderabad, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef3f6; --card:#ffffff; --ink:#10243a; --muted:#52667a; --line:#d3dee6; --accent:#0f7b8a; --accent-soft:#dff0f2;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0d1b2a;--card:#14273b;--ink:#e8f0f6;--muted:#9bb0c3;--line:#26405a;--accent:#5cc7d4;--accent-soft:#17384a}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;line-height:1.55}
+main{max-width:640px;margin:0 auto;padding:56px 22px 48px}
+.photo{width:120px;height:120px;border-radius:50%;background:var(--accent);color:var(--bg);display:grid;place-items:center;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:44px;margin-bottom:28px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(40px,10vw,60px);line-height:1.02;margin:0 0 12px;letter-spacing:-.02em}
+.role{font-size:18px;color:var(--muted);margin:0 0 4px}
+.role strong{color:var(--ink);font-weight:600}
+.lab{font-size:16px;color:var(--muted);margin:0 0 28px}
+.bio{font-size:17px;margin:0 0 40px;max-width:62ch}
+ul{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+li+li{border-top:1px solid var(--line)}
+a.row{display:flex;align-items:center;gap:16px;padding:18px 20px;color:inherit;text-decoration:none;transition:background .15s}
+a.row:hover{background:var(--accent-soft)}
+a.row:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.ico{flex:none;width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.txt{min-width:0}
+.label{display:block;font-size:13px;color:var(--muted)}
+.value{display:block;font-weight:500;font-size:16px;overflow-wrap:anywhere}
+.go{margin-left:auto;flex:none;width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+footer{margin-top:28px;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){a.row{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="photo">
+    <img src="photo.jpeg" alt="Portrait of Adeeba Khan" onerror="this.remove();this.parentNode.textContent='AK'">
+  </div>
+  <h1>Adeeba Khan</h1>
+  <p class="role"><strong>PhD Student, Biomedical Engineering</strong></p>
+  <p class="lab">Indian Institute of Technology Hyderabad</p>
+
+  <p class="bio">I am currently a PhD student in Biomedical Engineering at Indian Institute of Technology Hyderabad, where I work on contactless vital sign monitoring using physiology-inspired neural networks for non-invasive remote healthcare applications. Previously, I served as a Junior Research Fellow at Zakir Husain College of Engineering and Technology under the Ministry of Electronics and Information Technology’s Chip to Startup (C2S) Programme, in collaboration with International Institute of Information Technology Hyderabad and Malaviya National Institute of Technology Jaipur. I completed my BTech in Electronics from ZHCET, AMU, and my research interests include biomedical signal processing, deep learning, neurological disease prediction, and computational modeling of biological data.</p>
+
+  <ul>
+    <li><a class="row" href="mailto:bm25resch11004@iith.ac.in">
+      <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+      <span class="txt"><span class="label">Email</span><span class="value">bm25resch11004@iith.ac.in</span></span>
+      <svg class="go" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a></li>
+    <li><a class="row" href="tel:+917500844579">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+      <span class="txt"><span class="label">Phone</span><span class="value">(+91) 7500844579</span></span>
+      <svg class="go" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a></li>
+    <li><a class="row" href="https://www.linkedin.com/in/adeeba-khan-845b291b0" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5m0 2a2.5 2.5 0 0 1 5 0v3"/></svg></span>
+      <span class="txt"><span class="label">LinkedIn</span><span class="value">adeeba-khan</span></span>
+      <svg class="go" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a></li>
+    <li><a class="row" href="https://scholar.google.com/citations?user=ZwZQZ8UAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/></svg></span>
+      <span class="txt"><span class="label">Google Scholar</span><span class="value">Publications and citations</span></span>
+      <svg class="go" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a></li>
+    <li><a class="row" href="https://www.medinfolab.com/" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M9 3v6L4 19a1.5 1.5 0 0 0 1.3 2h13.4A1.5 1.5 0 0 0 20 19l-5-10V3"/><path d="M8 3h8M7 15h10"/></svg></span>
+      <span class="txt"><span class="label">Lab profile</span><span class="value">medinfolab.com</span></span>
+      <svg class="go" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a></li>
+  </ul>
+  <footer>Tap any row to get in touch or view my work.</footer>
+</main>
+</body>
+</html>
