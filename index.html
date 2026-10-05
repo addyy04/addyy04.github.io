@@ -4,54 +4,59 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Adeeba Khan</title>
-<meta name="description" content="Adeeba Khan, PhD student in Biomedical Engineering at IIT Hyderabad, India.">
+<meta name="description" content="Adeeba Khan, PhD student in Biomedical Engineering at IIT Hyderabad. Contactless vital sign monitoring with physiology-inspired neural networks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#eef3f6; --card:#ffffff; --ink:#10243a; --muted:#52667a; --line:#d3dee6; --accent:#0f7b8a; --accent-soft:#dff0f2;
-}
-@media (prefers-color-scheme: dark){
-  :root{--bg:#0d1b2a;--card:#14273b;--ink:#e8f0f6;--muted:#9bb0c3;--line:#26405a;--accent:#5cc7d4;--accent-soft:#17384a}
-}
+:root{--bg:#06121f;--ink:#e8f2f8;--muted:#8fa8bb;--line:rgba(120,200,220,.18);--glass:rgba(10,28,44,.62);--accent:#3dd6c6;--blue:#6aa8ff}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;line-height:1.55}
-main{max-width:640px;margin:0 auto;padding:56px 22px 48px}
-.photo{width:120px;height:120px;border-radius:50%;background:var(--accent);color:var(--bg);display:grid;place-items:center;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:44px;margin-bottom:28px;overflow:hidden}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(1200px 700px at 80% -10%,#0d2f45 0%,transparent 60%),var(--bg);color:var(--ink);font-family:"Figtree",system-ui,sans-serif;line-height:1.55;min-height:100vh}
+canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:660px;margin:0 auto;padding:calc(56px + env(safe-area-inset-top,0px)) 22px calc(48px + env(safe-area-inset-bottom,0px))}
+.photo{width:128px;height:128px;border-radius:50%;padding:4px;background:conic-gradient(from 200deg,var(--accent),var(--blue),var(--accent));margin-bottom:28px;box-shadow:0 0 40px rgba(61,214,198,.25)}
+.photo div{width:100%;height:100%;border-radius:50%;background:#0b2236;color:var(--accent);display:grid;place-items:center;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:44px;overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
-h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(40px,10vw,60px);line-height:1.02;margin:0 0 12px;letter-spacing:-.02em}
-.role{font-size:18px;color:var(--muted);margin:0 0 4px}
-.role strong{color:var(--ink);font-weight:600}
-.lab{font-size:16px;color:var(--muted);margin:0 0 28px}
-.bio{font-size:17px;margin:0 0 40px;max-width:62ch}
-ul{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
-li+li{border-top:1px solid var(--line)}
-a.row{display:flex;align-items:center;gap:16px;padding:18px 20px;color:inherit;text-decoration:none;transition:background .15s}
-a.row:hover{background:var(--accent-soft)}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(42px,11vw,64px);line-height:1;margin:0 0 14px;letter-spacing:-.02em}
+.role{font-size:19px;font-weight:600;margin:0 0 4px}
+.inst{font-size:16px;color:var(--muted);margin:0 0 32px}
+.panel{background:var(--glass);border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.bio{padding:22px;font-size:16.5px;margin:0 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px;padding:0;list-style:none}
+.chips li{font-size:14px;padding:6px 13px;border-radius:99px;border:1px solid var(--line);background:rgba(61,214,198,.08);color:#bfece7}
+ul.links{list-style:none;margin:0;padding:0;overflow:hidden}
+ul.links li+li{border-top:1px solid var(--line)}
+a.row{display:flex;align-items:center;gap:16px;padding:17px 20px;color:inherit;text-decoration:none;transition:background .15s}
+a.row:hover{background:rgba(61,214,198,.1)}
 a.row:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
-.ico{flex:none;width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.ico{flex:none;width:40px;height:40px;border-radius:10px;background:rgba(61,214,198,.12);color:var(--accent);display:grid;place-items:center}
 .ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .txt{min-width:0}
 .label{display:block;font-size:13px;color:var(--muted)}
 .value{display:block;font-weight:500;font-size:16px;overflow-wrap:anywhere}
 .go{margin-left:auto;flex:none;width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-footer{margin-top:28px;font-size:14px;color:var(--muted)}
+footer{margin-top:26px;font-size:14px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){a.row{transition:none}}
 </style>
 </head>
 <body>
+<canvas id="bg" aria-hidden="true"></canvas>
 <main>
-  <div class="photo">
-    <img src="photo.jpeg" alt="Portrait of Adeeba Khan" onerror="this.remove();this.parentNode.textContent='AK'">
-  </div>
+  <div class="photo"><div>
+    <img src="photo.jpg" alt="Portrait of Adeeba Khan" onerror="this.remove();this.parentNode.textContent='AK'">
+  </div></div>
   <h1>Adeeba Khan</h1>
-  <p class="role"><strong>PhD Student, Biomedical Engineering</strong></p>
-  <p class="lab">Indian Institute of Technology Hyderabad</p>
+  <p class="role">PhD Student, Biomedical Engineering</p>
+  <p class="inst">Indian Institute of Technology Hyderabad</p>
 
-  <p class="bio">I am currently a PhD student in Biomedical Engineering at Indian Institute of Technology Hyderabad, where I work on contactless vital sign monitoring using physiology-inspired neural networks for non-invasive remote healthcare applications. Previously, I served as a Junior Research Fellow at Zakir Husain College of Engineering and Technology under the Ministry of Electronics and Information Technology’s Chip to Startup (C2S) Programme, in collaboration with International Institute of Information Technology Hyderabad and Malaviya National Institute of Technology Jaipur. I completed my BTech in Electronics from ZHCET, AMU, and my research interests include biomedical signal processing, deep learning, neurological disease prediction, and computational modeling of biological data.</p>
+  <p class="bio panel">I am currently a PhD student in Biomedical Engineering at Indian Institute of Technology Hyderabad, where I work on contactless vital sign monitoring using physiology-inspired neural networks for non-invasive remote healthcare applications. Previously, I served as a Junior Research Fellow at Zakir Husain College of Engineering and Technology under the Ministry of Electronics and Information Technology’s Chip to Startup (C2S) Programme, in collaboration with International Institute of Information Technology Hyderabad and Malaviya National Institute of Technology Jaipur. I completed my BTech in Electronics from ZHCET, AMU, and my research interests include biomedical signal processing, deep learning, neurological disease prediction, and computational modeling of biological data.</p>
 
-  <ul>
+  <ul class="chips" aria-label="Research interests">
+    <li>Contactless vital signs</li><li>Physiology-inspired neural networks</li><li>Biomedical signal processing</li><li>Deep learning</li><li>Neurological disease prediction</li><li>Computational modeling</li>
+  </ul>
+
+  <ul class="links panel">
     <li><a class="row" href="mailto:bm25resch11004@iith.ac.in">
       <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
       <span class="txt"><span class="label">Email</span><span class="value">bm25resch11004@iith.ac.in</span></span>
@@ -75,5 +80,44 @@ footer{margin-top:28px;font-size:14px;color:var(--muted)}
   </ul>
   <footer>Tap any row to get in touch or view my work.</footer>
 </main>
+<script>
+(function(){
+  var c=document.getElementById('bg'),x=c.getContext('2d'),W,H,D,nodes=[],off=0,
+      still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function g(t,m,s,a){return a*Math.exp(-Math.pow((t-m)/s,2)/2)}
+  function ecg(t){return g(t,.14,.03,.12)+g(t,.28,.008,-.12)+g(t,.31,.01,1)+g(t,.34,.01,-.25)+g(t,.55,.05,.22)}
+  function size(){
+    D=window.devicePixelRatio||1;W=innerWidth;H=innerHeight;
+    c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0);
+    var n=Math.round(Math.min(70,W*H/16000));nodes=[];
+    for(var i=0;i<n;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25});
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    var i,j,a,b,d;
+    for(i=0;i<nodes.length;i++){
+      a=nodes[i];
+      if(!still){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}
+      for(j=i+1;j<nodes.length;j++){
+        b=nodes[j];d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<140){x.strokeStyle='rgba(106,168,255,'+(0.22*(1-d/140))+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+      }
+      x.fillStyle='rgba(61,214,198,.55)';x.beginPath();x.arc(a.x,a.y,2,0,6.283);x.fill();
+    }
+    var base=H*.9,amp=Math.min(70,H*.09),period=Math.max(320,W*.45),
+        gr=x.createLinearGradient(0,0,W,0);
+    gr.addColorStop(0,'rgba(61,214,198,0)');gr.addColorStop(1,'rgba(61,214,198,.85)');
+    x.strokeStyle=gr;x.lineWidth=2;x.shadowColor='rgba(61,214,198,.7)';x.shadowBlur=8;x.beginPath();
+    for(var px=0;px<=W;px+=2){
+      var t=(((px+off)/period)%1+1)%1,y=base-amp*ecg(t);
+      px?x.lineTo(px,y):x.moveTo(px,y);
+    }
+    x.stroke();x.shadowBlur=0;
+    if(!still){off+=1.6;requestAnimationFrame(draw)}
+  }
+  addEventListener('resize',function(){size();if(still)draw()});
+  size();draw();
+})();
+</script>
 </body>
 </html>
